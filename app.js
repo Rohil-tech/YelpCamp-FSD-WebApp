@@ -24,9 +24,9 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
 
-// process.env.DB_URL; // MongoDB Atlas database. Ideal for app deployment or production phase of the app.
+// process.env.DB_URL // MongoDB Atlas database. Ideal for app deployment or production phase of the app.
 // 'mongodb://localhost:27017/yelp-camp' // local MongoDB connection on system. Ideal during development phase of the app.
-const dbUrl = 'mongodb://localhost:27017/yelp-camp';
+const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
@@ -74,7 +74,7 @@ const sessionConfig = {
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
-        // secure: true,
+        secure: true,
         // Only set secure to "true" when deploying the app as this breaks the functionality of the website because it doesn't consider localhost as a secure endpoint.
         expires: Date.now() + 1000 * 60 * 60 * 24 * 2,
         // Date.now() gives time in miliseconds. So we have to add time to it accordingly.
