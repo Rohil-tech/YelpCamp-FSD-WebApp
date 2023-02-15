@@ -5,6 +5,7 @@ const Campground = require('../models/campground');
 const Review = require('../models/review');
 
 
+mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://localhost:27017/yelp-camp');
 
 
