@@ -1,0 +1,32 @@
+#cluster-map {
+    width: 100%;
+    height: 500px;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+}
+
+#stars {
+    min-height: 50px;
+}
+
+#form-img {
+    max-height: 300px;
+}
+
+#popup-link {
+    text-decoration: none;
+    padding: 0 15px 0 0;
+}
+
+#popup-desc {
+    padding: 0 15px 0 0;
+    margin: 0;
+}
+
+.popup-text {
+    margin: 0;
+    padding: 0 15px 0 5px;
+}

@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                <img id="form-img" src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                    alt="" class="card-img-top"/>
+                <div class="card-body pt-2">
+                    <h5 class="card-title">Register</h5>
+                    <form action="/register" method="POST" class="validated-form" novalidate>
+                        <div class="mb-1">
+                            <label class="form-label mb-0" for="username">Username</label>
+                            <input class="form-control py-1" type="text" id="username" name="username" autofocus required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-1">
+                            <label class="form-label mb-0" for="email">Email</label>
+                            <input class="form-control py-1" type="email" id="email" name="email" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label mb-0" for="password">Password</label>
+                            <input class="form-control py-1" type="password" id="password" name="password" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-success py-1">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
