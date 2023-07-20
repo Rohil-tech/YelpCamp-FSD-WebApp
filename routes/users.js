@@ -19,7 +19,7 @@ router.route('/register')
 router.route('/login')
     .get(users.renderLogin)
     .post(storeReturnTo,
-        passport.authenticate('local', { failureFlash: true, failureRedirect: '/login', failureMessage: true, keepSessionInfo: true }),
+        passport.authenticate('local', { failureFlash: true, failureRedirect: '/login', failureMessage: true }),
         (req, res) => {
             req.flash('success', 'Welcome back!');
             const redirectUrl = res.locals.returnTo || '/campgrounds';
