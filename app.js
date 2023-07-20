@@ -2,6 +2,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
+
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -26,8 +27,8 @@ const reviewRoutes = require('./routes/reviews');
 
 
 mongoose.set('strictQuery', false);
-// process.env.DB_URL // MongoDB Atlas database. Ideal for app deployment or production phase of the app.
-// 'mongodb://localhost:27017/yelp-camp' // local MongoDB connection on system. Ideal during development phase of the app.
+// process.env.DB_URL // MongoDB Atlas database. Ideal for app deployment or the production phase of the app.
+// 'mongodb://localhost:27017/yelp-camp' // local MongoDB connection on system. Ideal during the development phase of the app.
 const dbUrl = 'mongodb://localhost:27017/yelp-camp';
 mongoose.connect(dbUrl);
 
@@ -78,12 +79,12 @@ const sessionConfig = {
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
-        secure: true,
+        // secure: true,
         // Only set secure to "true" when deploying the app as this breaks the functionality of the website because it doesn't consider localhost as a secure endpoint.
         expires: Date.now() + 1000 * 60 * 60 * 24 * 2,
         // Date.now() gives time in miliseconds. So we have to add time to it accordingly.
         maxAge: 1000 * 60 * 60 * 24 * 2
-        // miliseconds * seconds * minutes * hours * days
+        // milliseconds * seconds * minutes * hours * days
     }
 };
 
@@ -118,6 +119,7 @@ const connectSrcUrls = [
     "https://events.mapbox.com/",
 ];
 const fontSrcUrls = [];
+
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
