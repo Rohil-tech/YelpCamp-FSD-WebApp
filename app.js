@@ -29,7 +29,7 @@ const reviewRoutes = require('./routes/reviews');
 mongoose.set('strictQuery', false);
 // process.env.DB_URL // MongoDB Atlas database. Ideal for app deployment or the production phase of the app.
 // 'mongodb://localhost:27017/yelp-camp' // local MongoDB connection on system. Ideal during the development phase of the app.
-const dbUrl = 'mongodb://localhost:27017/yelp-camp';
+const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
